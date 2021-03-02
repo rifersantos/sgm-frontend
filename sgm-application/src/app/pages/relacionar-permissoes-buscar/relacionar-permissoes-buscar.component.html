@@ -1,0 +1,46 @@
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Relacionar permissões - Buscar usuário
+  </h2>
+</div>
+<form #relacionarPemissoesBuscarForm="ngForm" class="margin-bottom">
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8 ao-centro">
+        <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row pl-5 mb-0">
+      <label for="nome">Parâmetro de busca</label>
+        </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-10 col-md-10 col-lg-10 col-xl-10">
+          <input type="text" [(ngModel)]="parametroBusca" class="form-control" id="parametroBusca" name="parametroBusca"
+            maxlength="100" required placeholder="CPF ou nome">
+        </div>
+        <div class="form-group col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <button type="submit" (click)="buscar()" class="btn btn-primary right-button" [disabled]="!relacionarPemissoesBuscarForm.valid">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="listaUsuarios.length > 0" class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div  class="table-responsive col-sm-12 col-md-12 col-lg-12 col-xl-12 table table-striped">
+        <div class="container">
+          <div matSort (matSortChange)="sortData($event)" class="row t-header">
+            <div mat-sort-header="nome" class="col-sm-6 col-md-6 col-lg-6 col-xl-6">Nome</div>
+            <div mat-sort-header="cpf" class="col-sm-4 col-md-4 col-lg-4 col-xl-4">CPF</div>
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2"> Ações </div>
+          </div>
+          <div class="row t-body" *ngFor="let u of listaUsuarios | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">{{u.nome}}</div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">{{u.cpf}}</div>
+            
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+              <a (click)="editarPermissoes(u)"><img title="Editar Permissoes" class="icon-click" src="assets/svg/si-glyph-pencil.svg" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <pagination-controls *ngIf="listaUsuarios.length > 10" class="pagination" (pageChange)="p = $event"></pagination-controls>
+    
+    </div>
+</form>

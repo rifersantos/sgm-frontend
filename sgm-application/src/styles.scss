@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+$azul:       #007bff !default;
+$indigo:     #6610f2 !default;
+$roxo:       #6f42c1 !default;
+$vermelho:   #dc3545 !default;
+$laranja:    #fd7e14 !default;
+$amarelo:    #ffc107 !default;
+$verde:      #28a745 !default;
+$ciano:      #17a2b8 !default;
+
+@import '~ngx-bootstrap/datepicker/bs-datepicker.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.ao-centro{
+    text-align: -webkit-center;
+}
+
+.a-esquerda{
+    text-align: -webkit-left;
+}
+
+.a-direita{
+    text-align: -webkit-right;
+}
+
+.lado-a-lado{
+    float: left;
+    display: block;
+}
+
+.erro-formulario{
+    border: 2px solid $vermelho;
+    border-radius: .25rem;
+}
+
+.left-button{
+    float: left;
+    margin-right: 1em;
+    display: block;
+}
+
+.right-button{
+    float: right;
+    margin-left: 1em;
+    display: block;
+}
+
+.margin-bottom{
+    margin-bottom: 5em;
+}
+
+.no-padding{
+    padding:0;
+}
+
+.icon-click{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.icon-click-mini{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.t-header{
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-weight: bolder;
+}
+
+.t-body{
+    border-bottom: 2px solid lightgray;
+}
+
+.pagination{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.t-body:nth-of-type(odd) div {
+  background-color:lightgrey;
+} 
+
+.t-body:nth-of-type(even) div {
+   background: #FFFFFF;
+} 
+
+.separador{
+    border-bottom: 2px solid lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.secao-claro{
+    background-color:#dedbdb;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+}
+
+.secao-escuro{
+    background-color:#eaeaea;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.secao-separa{
+    border: 2px solid #f8f9fa;
+    border-left: 0.3em solid #403080;
+    border-radius: 0.3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom:1em !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

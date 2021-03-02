@@ -1,0 +1,44 @@
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Relacionar permissões - incluir/excluir permissões
+  </h2>
+</div>
+<form #relacionarPemissoesAtivarForm="ngForm" class="margin-bottom">
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8 ao-centro">
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row a-esquerda">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 row">
+          Nome : {{usuarioEscolhido.nome}}
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 row">
+          CPF : {{usuarioEscolhido.cpf}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="table-responsive col-sm-12 col-md-12 col-lg-12 col-xl-12 table table-striped">
+      <div class="container">
+        <div matSort (matSortChange)="sortData($event)" class="row t-header">
+          <div mat-sort-header="nome" class="col-sm-5 col-md-5 col-lg-5 col-xl-5">Nome</div>
+          <div mat-sort-header="permissaso" class="col-sm-5 col-md-5 col-lg-5 col-xl-5">Permissão</div>
+          <div mat-sort-header="status" class="col-sm-2 col-md-2 col-lg-2 col-xl-2">Status</div>
+        </div>
+        <div class="row t-body" *ngFor="let perm of permissoes">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">{{perm.nome}}</div>
+          <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">{{perm.apresentacao}}</div>
+          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <input type="checkbox"  [checked]="perm.status" name="status" data-md-icheck (change)="changeCheckbox(perm,$event)" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <button type="submit" (click)="goBack()" class="btn btn-primary right-button">Voltar</button>
+        <button type="submit" (click)="salvar(relacionarPemissoesAtivarForm)" class="btn btn-primary right-button" [disabled]="!relacionarPemissoesAtivarForm.valid">Salvar</button>
+      </div>
+  </div>
+</form>

@@ -1,0 +1,34 @@
+  <app-message></app-message>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro login">
+    <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <label for="cpf">CPF</label>
+      <input type="text" [(ngModel)]="cpf"class="form-control" id="cpf" aria-describedby="cpfHelp" placeholder="Digite seu cpf">
+    </div>
+    <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <label for="password">senha</label>
+      <input type="password" [(ngModel)]="password"  class="form-control" id="password" placeholder="Digite sua senha">
+    </div>
+    <div>
+      <a href="#">Esqueci minha senha</a>
+    </div>
+    <button type="submit" (click)="realizarLogin()" class="btn btn-primary">Entrar</button>
+    <!--div que mostra as roles do usuario caso ele tenha mais de uma, 
+      para que o mesmo escolha uma para logar-->
+    <div *ngIf="roles" class="overlay">  
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro m-top-8em">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="title-roles">
+          <span>
+            <h4>Você possui mais de uma atribuição no sistema!</h4>
+            <p>Por favor selecione com qual deseja logar.</p>
+          </span>
+        </div>
+          <ul class="list-group">
+            <li *ngFor="let r of roles" class="list-group-item" (click)="loginRole(r)">
+              <span class="badge" > {{r.apresentacao}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>

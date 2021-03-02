@@ -1,0 +1,15 @@
+<li *ngIf="route.url=='/login'"class="nav-item">
+  <a class="nav-link" href="/primeiro-acesso">Primeiro acesso</a>
+</li>
+<li *ngIf="route.url!='/login' && route.url!='/cadastro'" class="nav-item dropdown">
+  <a (click)="montaMenu()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </a>
+  <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a *ngIf="ROLE_MASTER" class="dropdown-item" href="/relacionar-permissoes-buscar">Relacionar permissões</a>
+    <a *ngIf="ROLE_MASTER" class="dropdown-item" href="/gerenciamento-usuario-listar">Gerenciar Usuários</a>
+    <a *ngIf="ROLE_CIDADAO_U || ROLE_MASTER" class="dropdown-item" href="#">Consulta IPTU</a>
+    <a *ngIf="ROLE_CIDADAO_R || ROLE_MASTER" class="dropdown-item" href="#">Consulta ITR</a>
+    <a *ngIf="ROLE_CIDADAO_U || ROLE_CIDADAO_R || ROLE_MASTER" class="dropdown-item" href="#">Consulta andamento de projetos</a>
+  </div>
+</li>

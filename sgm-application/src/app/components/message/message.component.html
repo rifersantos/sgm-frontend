@@ -1,0 +1,7 @@
+<div class="message-content">
+  <div [ngClass]="classes" class="alert alert-primary line-breaker" role="alert" *ngIf="mensagem">
+      <div class="close" (click)="close()">x</div>
+      <strong>{{mensagemTipo}}</strong>
+      {{mensagem}}
+  </div>
+</div>

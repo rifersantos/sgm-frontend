@@ -1,0 +1,14 @@
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Importar Funcionários
+  </h2>
+</div>
+<form #importacaoForm="ngForm">
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+    <input #arquivoEscolhido type="file" name="file" placeholder="Upload file" (change)="recebeArquivo($event)" accept=".csv">
+  </div>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+    <button (click)="enviarArquivo()" [disabled]="isDisabled">Enviar</button>
+  </div>
+</form>

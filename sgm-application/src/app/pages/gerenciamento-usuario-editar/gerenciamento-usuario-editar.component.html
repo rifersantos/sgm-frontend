@@ -1,0 +1,117 @@
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Gerenciamento de Usuários
+  </h2>
+</div>
+<form class="margin-bottom">
+  <div *ngIf="usuario" class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro">
+    <div class="form-group col-sm-10 col-md-10 col-lg-10 col-xl-10 secao-separa">
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-3 col-md-3 col-lg-3 col-xl-3 a-esquerda">
+          <label for="id">ID sistema</label>
+          <input type="text" [ngModel]="usuario.id" class="form-control" id="id" name="id" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-9 col-md-9 col-lg-9 col-xl-9 a-esquerda">
+          <label for="nome">Nome</label>
+          <input type="text" [ngModel]="usuario.nome" class="form-control" id="nome" name="nome" required [readonly]="true">
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="cpf">CPF</label>
+          <input type="text" [ngModel]="usuario.cpf | mask: '000.000.000-00'" class="form-control" id="cpf" name="cpf"
+            required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="secao">Seção</label>
+          <input type="text" [ngModel]="usuario.secao" class="form-control" id="secao" name="secao" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="codigoFuncao">Código função</label>
+          <input type="text" [ngModel]="usuario.codigoFuncao" class="form-control" id="codigoFuncao" name="codigoFuncao"
+            required [readonly]="true">
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="cooperativa">Cooperativa</label>
+          <input type="text" [ngModel]="usuario.cooperativa" class="form-control" id="cooperativa" name="cooperativa"
+            required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="dataAdmissao">Data de admissão</label>
+          <input type="text" [ngModel]="usuario.dataAdmissao | date : short : pt-BR" class="form-control" id="dataAdmissao"
+            name="dataAdmissao" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="dataDemissao">Data de demissão</label>
+          <input type="text" [ngModel]="usuario.dataDemissao | date : short : pt-BR" class="form-control" id="dataDemissao"
+            name="dataDemissao" required [readonly]="true">
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-3 col-md-3 col-lg-3 col-xl-3 a-esquerda">
+          <label for="tamanhoCamiseta">Tamanho camiseta</label>
+          <input type="text" [ngModel]="usuario.tamanhoCamiseta" class="form-control" id="tamanhoCamiseta" name="tamanhoCamiseta"
+            required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-9 col-md-9 col-lg-9 col-xl-9 a-esquerda">
+          <label for="nomeCracha">Nome crachá</label>
+          <input type="text" [ngModel]="usuario.nomeCracha" class="form-control" id="nomeCracha" name="nomeCracha"
+            required [readonly]="true">
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="telefone">Telefone</label>
+          <input type="text" [ngModel]="usuario.telefone | mask:'(00) 00000-0000'" class="form-control" id="telefone"
+            name="telefone" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8 a-esquerda">
+          <label for="email">E-mail</label>
+          <input type="text" [ngModel]="usuario.email" class="form-control" id="email" name="email" required [readonly]="true">
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="dataCadastro">Data cadastro</label>
+          <input type="text" [ngModel]="usuario.dataCadastro | date : short : pt-BR" class="form-control" id="dataCadastro"
+            name="dataCadastro" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="ultimaAtualizacao">Última atualização</label>
+          <input type="text" [ngModel]="usuario.ultimaAtualizacao | date : short : pt-BR" class="form-control" id="ultimaAtualizacao"
+            name="ultimaAtualizacao" required [readonly]="true">
+        </div>
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="atribuicoes">Atribuições</label>
+          <ul>
+            <div *ngFor="let a of usuario.role">
+              <li>
+                <strong>
+                  {{a.apresentacao}}
+                </strong>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 col-xl-4 a-esquerda">
+          <label for="situacao">Situação</label>
+          <select class="custom-select" id="situacao" [(ngModel)]="usuario.situacao" [ngModelOptions]="{standalone: true}" >
+              <option value="A">Ativo</option>
+              <option value="D">Demitido</option>
+              <option value="F">Férias</option>
+              <option value="B">Bloqueado</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-10 col-md-10 col-lg-10 col-xl-10">
+      <button type="submit" (click)="goBack()" class="btn btn-primary right-button">Voltar</button>
+      <button type="submit" (click)="salvar()" class="btn btn-primary right-button" [disabled]="usuario == null">Salvar</button>
+    </div>
+  </div>
+</form>

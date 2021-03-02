@@ -1,0 +1,13 @@
+version: "3.7"
+
+services: 
+          
+     sgm-application:
+        image: sgm-application-image:latest
+        container_name: sgm-application-container   
+        ports:
+            - "8080:80"        
+        build:
+            context: .
+            dockerfile: ./Dockerfile 
+       

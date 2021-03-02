@@ -1,0 +1,28 @@
+
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Bem vindo, {{usuario.firstName}}
+  </h2>
+</div>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+    
+    
+  </div>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <p>
+        Nome Completo : <label>{{usuario.firstName}} {{usuario.lastName}}</label>
+      </p>
+    </div>
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <p>
+        CPF : <label>{{usuario.cpf | mask: '000.000.000-00'}}</label>
+      </p>
+    </div>
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <p>
+        Email : <label>{{usuario.email}}</label>
+      </p>
+    </div>
+  </div>
