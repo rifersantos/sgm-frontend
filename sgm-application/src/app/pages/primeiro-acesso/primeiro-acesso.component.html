@@ -42,6 +42,6 @@
       <input type="text" [(ngModel)]="primeiroAcesso.ConfirmPassword"  class="form-control" id="confirmarSenha" name="confirmarSenha"
         aria-describedby="confirmarSenhaHelp" placeholder="repetir senha" required>
     </div>
-    <button type="submit" (click)="confirmarUsuario(primeiroAcessoForm)" class="btn btn-primary" [disabled]="!primeiroAcessoForm.valid">continuar</button>
+    <button type="submit" (click)="confirmarUsuario()" class="btn btn-primary" [disabled]="!primeiroAcessoForm.valid">continuar</button>
   </div>
 </form>
