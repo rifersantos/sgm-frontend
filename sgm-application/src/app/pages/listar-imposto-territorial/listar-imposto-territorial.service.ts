@@ -6,12 +6,20 @@ import { ParentService } from 'app/util/parent.service';
 })
 export class ListarImpostoTerritorialService {
 
-  private _Url = 'sgm-services/rest/listarImpostoTerritorial';
+  private _UrlIptu = 'iptu/';
+  private _UrlItr = 'itr/';
+
   constructor(private service: ParentService) {
   }
 
-  listarImpostoTerritorial(): any {
-    return this.service.get(this._Url)
+  listarImpostoTerritorial(parametros:any): any {
+    let url;
+    if(parametros.tipoImposto == "iptu"){
+      url = this._UrlIptu;
+    }else{
+      url = this._UrlItr;
+    }
+    return this.service.get(url+parametros.inscricaoImobiliaria)
       .then(
         retorno => { // Success
           return (retorno);

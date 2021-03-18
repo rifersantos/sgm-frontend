@@ -1,0 +1,33 @@
+<app-message></app-message>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <h2>
+    Consulta ao imposto territorial 
+  </h2>
+</div>
+<form #impostoTerritorialForm="ngForm">
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <label>* Dados Obrigatórios</label>
+    </div>
+    <p>Informe os dados para realizar a consulta.</p>
+  </div>
+  <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12 ao-centro login">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <label for="inscricaoImobiliaria">inscrição imobiliaria*</label>
+      <input type="text" [(ngModel)]="inscricaoImobiliaria" class="form-control" mask="00.0.0000.0000.00-0" id="inscricaoImobiliaria" name="inscricaoImobiliaria"
+        aria-describedby="inscricaoImobiliariaHelp" placeholder="Inscricao Imobiliaria" required>
+    </div>
+
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <label for="tipoImposto">Tipo de imposto</label>
+      <mat-form-field style="width: 70%;">
+        <mat-select [(ngModel)]="tipoImposto" name="tipoImposto">
+          <mat-option value="iptu">IPTU</mat-option>
+          <mat-option value="itr">ITR</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <button type="submit" (click)="confirmarDados()" class="btn btn-primary" [disabled]="!impostoTerritorialForm.valid">continuar</button>
+  </div>
+</form>

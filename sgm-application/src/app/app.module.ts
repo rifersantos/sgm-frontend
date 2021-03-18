@@ -44,6 +44,9 @@ import { GerenciamentoUsuarioEditarRoutingModule } from './pages/gerenciamento-u
 import { ListarImpostoTerritorialComponent } from './pages/listar-imposto-territorial/listar-imposto-territorial.component';
 import { PrimeiroAcessoComponent } from './pages/primeiro-acesso/primeiro-acesso.component';
 import { PrimeiroAcessoRoutingModule } from './pages/primeiro-acesso/primeiro-acesso-routing.module';
+import { ListarImpostoTerritorialRoutingModule } from './pages/listar-imposto-territorial/listar-imposto-territorial-routing.module';
+import { ImpostoTerritorialComponent } from './pages/imposto-territorial/imposto-territorial.component';
+import { ImpostoTerritorialRoutingModule } from './pages/imposto-territorial/imposto-territorial-routing.module';
 
 
 defineLocale('pt-br', ptBrLocale);//necessário para o datePicker
@@ -64,7 +67,8 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     GerenciamentoUsuarioEditarComponent,
     GerenciamentoUsuarioListarComponent,
     ListarImpostoTerritorialComponent,
-    PrimeiroAcessoComponent    
+    PrimeiroAcessoComponent,
+    ImpostoTerritorialComponent    
   ],
   exports: [
     LoaderComponent,
@@ -85,6 +89,8 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     GerenciamentoUsuarioListarRoutingModule,
     GerenciamentoUsuarioEditarRoutingModule,
     PrimeiroAcessoRoutingModule,
+    ListarImpostoTerritorialRoutingModule,
+    ImpostoTerritorialRoutingModule,
     NgxPaginationModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),

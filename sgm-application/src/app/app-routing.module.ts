@@ -34,12 +34,17 @@ const routes : Routes = [
     },
     {
         path:'listar-imposto-territorial',
-        redirectTo:'listar-imposto-territorial',
+        redirectTo:'/listar-imposto-territorial',
         pathMatch:'full'
     },
     {
         path:'primeiro-acesso',
         redirectTo:'/primeiro-acesso',
+        pathMatch:'full'
+    },
+    {
+        path:'imposto-territorial',
+        redirectTo:'/imposto-territorial',
         pathMatch:'full'
     },
 ];

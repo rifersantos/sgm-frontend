@@ -13,4 +13,4 @@ const listarImpostoTerritorialRoutes : Routes = [
         RouterModule.forChild(listarImpostoTerritorialRoutes)
     ]
 })
-export class PrimeiroAcessoRoutingModule { }
+export class ListarImpostoTerritorialRoutingModule { }
