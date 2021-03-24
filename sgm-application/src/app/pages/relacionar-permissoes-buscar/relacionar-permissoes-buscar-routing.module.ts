@@ -8,7 +8,7 @@ const relacionarPermissoesBuscarRoutes : Routes = [
         path:'relacionar-permissoes-buscar',
         component:RelacionarPermissoesBuscarComponent,
         canActivate: [RoleGuard],
-        data: {role: ['ROLE_MASTER']}
+        data: {role: ['MASTER']}
     }];
 
 @NgModule({

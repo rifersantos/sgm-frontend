@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 
 import { RouterModule,Routes } from '@angular/router';
+import { RoleGuard } from 'app/guards/role-guard.service';
 import { ImpostoTerritorialComponent } from './imposto-territorial.component';
 const impostoTerritorialRoutes : Routes = [
     {
         path:'imposto-territorial',
-        component:ImpostoTerritorialComponent
+        component:ImpostoTerritorialComponent,
+        canActivate: [RoleGuard],
+        data: { role: ['CIDADAO', 'MASTER', 'FUNCIONARIO']}
     }];
 
 @NgModule({

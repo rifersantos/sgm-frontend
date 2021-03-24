@@ -47,6 +47,10 @@ import { PrimeiroAcessoRoutingModule } from './pages/primeiro-acesso/primeiro-ac
 import { ListarImpostoTerritorialRoutingModule } from './pages/listar-imposto-territorial/listar-imposto-territorial-routing.module';
 import { ImpostoTerritorialComponent } from './pages/imposto-territorial/imposto-territorial.component';
 import { ImpostoTerritorialRoutingModule } from './pages/imposto-territorial/imposto-territorial-routing.module';
+import { ConsultarProjetosListarComponent } from './pages/consultar-projetos-listar/consultar-projetos-listar.component';
+import { ConsultarProjetosDetalhesComponent } from './pages/consultar-projetos-detalhes/consultar-projetos-detalhes.component';
+import { ConsultarProjetosListarRoutingModule } from './pages/consultar-projetos-listar/consultar-projetos-listar-routing.module';
+import { ConsultarProjetosDetalhesRoutingModule } from './pages/consultar-projetos-detalhes/consultar-projetos-detalhes-routing.module';
 
 
 defineLocale('pt-br', ptBrLocale);//necessário para o datePicker
@@ -68,7 +72,9 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     GerenciamentoUsuarioListarComponent,
     ListarImpostoTerritorialComponent,
     PrimeiroAcessoComponent,
-    ImpostoTerritorialComponent    
+    ImpostoTerritorialComponent,
+    ConsultarProjetosListarComponent,
+    ConsultarProjetosDetalhesComponent    
   ],
   exports: [
     LoaderComponent,
@@ -91,6 +97,8 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     PrimeiroAcessoRoutingModule,
     ListarImpostoTerritorialRoutingModule,
     ImpostoTerritorialRoutingModule,
+    ConsultarProjetosListarRoutingModule,
+    ConsultarProjetosDetalhesRoutingModule,
     NgxPaginationModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),

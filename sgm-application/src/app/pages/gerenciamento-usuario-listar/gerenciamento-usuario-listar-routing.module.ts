@@ -8,7 +8,7 @@ const gerenciamentoUsuarioListarRoutes : Routes = [
         path:'gerenciamento-usuario-listar',
         component:GerenciamentoUsuarioListarComponent,
         canActivate: [RoleGuard],
-        data: { role: ['ROLE_MASTER', 'ROLE_MASTER_AUXILIAR', 'ROLE_GESTOR', 'ROLE_GESTOR_AUXILIAR']}
+        data: { role: ['MASTER']}
     }
 ];
 

@@ -47,6 +47,16 @@ const routes : Routes = [
         redirectTo:'/imposto-territorial',
         pathMatch:'full'
     },
+    {
+        path:'consulta-projetos-listar',
+        redirectTo:'/consulta-projetos-listar',
+        pathMatch:'full'
+    },
+    {
+        path:'consulta-projetos-detalhes',
+        redirectTo:'/consulta-projetos-detalhes',
+        pathMatch:'full'
+    }
 ];
 
 @NgModule({

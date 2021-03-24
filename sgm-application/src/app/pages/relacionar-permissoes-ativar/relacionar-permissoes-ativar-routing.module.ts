@@ -8,7 +8,7 @@ const relacionarPermissoesAtivarRoutes : Routes = [
         path:'relacionar-permissoes-ativar',
         component:RelacionarPermissoesAtivarComponent,
         canActivate: [RoleGuard],
-        data: {role: ['ROLE_MASTER']}
+        data: {role: ['MASTER']}
     }];
 
 @NgModule({

@@ -8,7 +8,7 @@ const importarRoutes : Routes = [
         path:'importar',
         component:ImportarUsuarioComponent,
         canActivate: [RoleGuard],
-        data: {role: ['ROLE_MASTER','ROLE_MASTER_AUXILIAR']}
+        data: {role: ['MASTER']}
     }
 ];
 
