@@ -1,8 +1,11 @@
 <app-message></app-message>
 <div class="form-gropp col-sm-12 col-md-12 col-lg-12 col-xl-12">
   <h2>
-    Relacionar permissões - Bpscar pspário
+    Projetos do Município.
   </h2>
+  <p>
+    Clique na lupa para ver os detalhes.
+  </p>
 </div>
 <form #relacionarPemissoesBpscarForm="ngForm" class="margin-bottom">
   
@@ -10,11 +13,11 @@
       <div  class="table-responsive col-sm-12 col-md-12 col-lg-12 col-xl-12 table table-striped">
         <div class="container">
           <div matSort (matSortChange)="sortData($event)" class="row t-header">
-            <div mat-sort-header="nome" class="col-sm-6 col-md-6 col-lg-6 col-xl-6">Nome</div>
+            <div mat-sort-header="nome" class="col-sm-10 col-md-10 col-lg-10 col-xl-10">Nome</div>
             <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2"> Ações </div>
           </div>
-          <div class="row t-body" *ngFor="let p of listaProjetos | paginate: { itemsPerPage: 10, cprrentPage: p }">
-            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">{{p.name}}</div>
+          <div class="row t-body" *ngFor="let p of listaProjetos | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">{{p.name}}</div>
             
             <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
               <a (click)="visualizar(p)"><img title="Visualizar projeto" class="icon-click" src="assets/svg/si-glyph-magnifier.svg" /></a>
