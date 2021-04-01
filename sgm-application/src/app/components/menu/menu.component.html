@@ -6,9 +6,8 @@
     Menu
   </a>
   <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a *ngIf="admin" class="dropdown-item" href="/relacionar-permissoes-buscar">Relacionar permissões</a>
-    <a *ngIf="admin" class="dropdown-item" href="/gerenciamento-usuario-listar">Gerenciar Usuários</a>
-    <a *ngIf="citizen || admin " class="dropdown-item" href="/imposto-territorial">Consulta a impostos territoriais</a>
-    <a *ngIf="admin  || citizen || employee" class="dropdown-item" href="/consulta-projetos-listar">Consulta andamento de projetos</a>
+    <a *ngIf="admin" class="dropdown-item" href="/gerenciamento-usuario-editar">Gerenciar Atribuições de Usuários</a>
+    <a *ngIf="citizen || admin " class="dropdown-item" href="/imposto-territorial">Consulta a Impostos Territoriais</a>
+    <a *ngIf="admin  || citizen || employee" class="dropdown-item" href="/consulta-projetos-listar">Consulta Andamento de Projetos</a>
   </div>
 </li>

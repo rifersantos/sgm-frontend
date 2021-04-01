@@ -5,15 +5,23 @@
       <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
           </li>
           <app-menu></app-menu>
         </ul>
       </div>
+
       <div class="ao-centro col-sm-4 col-md-4 col-lg-4 col-xl-4">
         <h1>Sistema de Gestão Municipal</h1>
       </div>
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      </div>
+      <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a *ngIf="route.url!='/login'" class="nav-link" href="/#">Sair <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

@@ -15,12 +15,17 @@ export class RoleGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const userRole = this._authService.getUserRole();
-    if (next.data.role.indexOf(userRole) > -1) {
-      return true;
-    }else if(userRole === undefined){
+    if(userRole === undefined){
       this._router.navigate(['/login']);
       return false;  
     }
+    for (let index = 0; index < userRole.length; index++) {
+      const element = userRole[index];
+      if (next.data.role.indexOf(element) > -1) {
+        return true;
+      }
+    }
+    
 
     // navigate to not found page
     this._router.navigate(['/forbidden']);

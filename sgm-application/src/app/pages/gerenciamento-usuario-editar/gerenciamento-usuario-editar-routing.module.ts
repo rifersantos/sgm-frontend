@@ -8,7 +8,7 @@ const gerenciamentoUsuarioEditarRoutes : Routes = [
         path:'gerenciamento-usuario-editar',
         component:GerenciamentoUsuarioEditarComponent,
         canActivate: [RoleGuard],
-        data: { role: ['MASTER']}
+        data: { role: ['admin']}
     }
 ];
 

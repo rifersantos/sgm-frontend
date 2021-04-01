@@ -12,36 +12,30 @@ import { Roteador } from 'app/core/data/roteador-provider';
 export class GerenciamentoUsuarioEditarComponent implements OnInit {
   @ViewChild(MessageComponent) mensagem: MessageComponent;
 
-  public usuario: Usuario;
+  public cpf: String;
+  public role:String;
 
   constructor(private service: GerenciamentoUsuarioEditarEventoService,
-    private roteador: Roteador) { }
+    private roteador: Roteador) { 
+
+    }
 
   ngOnInit() {
-    let param = this.roteador.getParam();
-
-    if (param && param['usuario']) {
-      this.usuario = param['usuario'];
-    }else{
-      this.goBack();
-    }
-  }
-
-  goBack(){
-    this.roteador.goto('gerenciamento-usuario-listar');
+    
   }
 
   salvar() {
-    this.service.alterarUsuario(this.usuario)
+    let parametros = {"cpf":this.cpf,"roles":this.role.split(",")};
+    this.service.alterarRoles(parametros)
       .then((response: any) => {
-        if (response.codigoRetorno == 'SUCESSO') {
+        if (response.succeeded) {
           this.mensagem.sucesso("Usuario alterado. ", 0);
         } else {
-          this.mensagem.erro("Falha ao alterar usuário. " + response.mensagem ? response.mensagem : "", 0);
+          this.mensagem.erro("Falha ao alterar usuário. " + response.message, 0);
         }
       })
       .catch((erro) => {
-        this.mensagem.erro("Falha ao alterar usuário. " + erro.mensagem ? erro.mensagem : "", 0);
+        this.mensagem.erro("Falha ao alterar usuário. " + erro.message, 0);
       });
   }
 

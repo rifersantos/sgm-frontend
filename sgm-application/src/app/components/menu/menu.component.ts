@@ -30,11 +30,13 @@ export class MenuComponent implements OnInit {
      this.citizen=false;
      this.employee=false;
      let role = this.authService.getUserRole();
-     if(role=="admin"){
+     if(role=="admin" || role.indexOf("admin") > -1){
        this.admin=true;
-     }else  if(role=="citizen"){
+     }
+     if(role=="citizen"|| role.indexOf("citizen") > -1){
        this.citizen=true;
-     }else  if(role=="employee"){
+     }
+     if(role=="employee"|| role.indexOf("employee") > -1){
        this.employee=true;
      }
    }

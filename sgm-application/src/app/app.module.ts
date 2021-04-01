@@ -33,13 +33,7 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 import { Roteador } from './core/data/roteador-provider';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RelacionarPermissoesAtivarComponent } from './pages/relacionar-permissoes-ativar/relacionar-permissoes-ativar.component';
-import { RelacionarPermissoesBuscarComponent } from './pages/relacionar-permissoes-buscar/relacionar-permissoes-buscar.component';
-import { RelacionarPermissoesBuscarRoutingModule } from './pages/relacionar-permissoes-buscar/relacionar-permissoes-buscar-routing.module';
-import { RelacionarPermissoesAtivarRoutingModule } from './pages/relacionar-permissoes-ativar/relacionar-permissoes-ativar-routing.module';
 import { GerenciamentoUsuarioEditarComponent } from './pages/gerenciamento-usuario-editar/gerenciamento-usuario-editar.component';
-import { GerenciamentoUsuarioListarComponent } from './pages/gerenciamento-usuario-listar/gerenciamento-usuario-listar.component';
-import { GerenciamentoUsuarioListarRoutingModule } from './pages/gerenciamento-usuario-listar/gerenciamento-usuario-listar-routing.module';
 import { GerenciamentoUsuarioEditarRoutingModule } from './pages/gerenciamento-usuario-editar/gerenciamento-usuario-editar-routing.module';
 import { ListarImpostoTerritorialComponent } from './pages/listar-imposto-territorial/listar-imposto-territorial.component';
 import { PrimeiroAcessoComponent } from './pages/primeiro-acesso/primeiro-acesso.component';
@@ -66,10 +60,7 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     MenuComponent,
     RoleComponent,
     ForbiddenComponent,
-    RelacionarPermissoesAtivarComponent,
-    RelacionarPermissoesBuscarComponent,
     GerenciamentoUsuarioEditarComponent,
-    GerenciamentoUsuarioListarComponent,
     ListarImpostoTerritorialComponent,
     PrimeiroAcessoComponent,
     ImpostoTerritorialComponent,
@@ -90,9 +81,6 @@ registerLocaleData(localePt, 'pt-BR');//necessário para o Date pipe
     ImportarRoutingModule,
     NgxMaskModule.forRoot(),
     ForbiddenRoutingModule,
-    RelacionarPermissoesBuscarRoutingModule,
-    RelacionarPermissoesAtivarRoutingModule,
-    GerenciamentoUsuarioListarRoutingModule,
     GerenciamentoUsuarioEditarRoutingModule,
     PrimeiroAcessoRoutingModule,
     ListarImpostoTerritorialRoutingModule,

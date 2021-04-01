@@ -7,12 +7,12 @@ import { Usuario } from 'app/models/usuario.model';
     providedIn: 'root'
 })
 export class GerenciamentoUsuarioEditarEventoService {
-    private _Url = 'sgm-services/rest/gerenciamento/usuario/editar';
+    private _Url = 'sgm-auth-api/Auth/add-roles';
     constructor(private service: ParentService) {
     }
   
-    alterarUsuario(usuario: Usuario): any {
-      return this.service.put(this._Url, usuario)
+    alterarRoles(parametros: any): any {
+      return this.service.post(this._Url, parametros)
         .then(
           retorno => { // Success
             return (retorno);

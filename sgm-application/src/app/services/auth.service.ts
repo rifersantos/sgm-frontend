@@ -10,11 +10,15 @@ export class AuthService {
 
   constructor() { }
 
-  getUserRole(): string {
+  getUserRole(): any {
     try {
       let token = sessionStorage.getItem('token');
       if (token != null && token != "" && token != undefined) {
         let role = jwt_decode(sessionStorage.getItem("token")).role;
+        if(role.length > 3){
+          let roleArray = new Array<String>(role);
+          return roleArray;
+        }
         return role;
       } else {
         return undefined;

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
   
   ngOnInit() {
-    
+    sessionStorage.removeItem("token");
   }
 
   realizarLogin() : void {
