@@ -39,7 +39,6 @@ export class AuthService {
         usuario.email=decodedJwt.email;
         let roles = new Array<RoleModel>();
         let role = new RoleModel;
-        debugger;
         role=decodedJwt.role;
         roles.push(role);
         usuario.role=roles;

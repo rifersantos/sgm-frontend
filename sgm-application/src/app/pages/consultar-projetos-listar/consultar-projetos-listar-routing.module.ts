@@ -6,9 +6,9 @@ import { ConsultarProjetosListarComponent } from "./consultar-projetos-listar.co
 const consultarProjetosListarRoutes : Routes = [
     {
         path:'consulta-projetos-listar',
-        component:ConsultarProjetosListarComponent
-       // canActivate: [RoleGuard],
-       // data: { role: ['CIDADAO', 'MASTER', 'FUNCIONARIO']}
+        component:ConsultarProjetosListarComponent,
+        canActivate: [RoleGuard],
+        data: { role: ['citizen', 'admin', 'employee']}
     }
 ];
 

@@ -6,7 +6,7 @@ import { PrimeiroAcesso } from 'app/models/primeiroAcesso.model';
   providedIn: 'root'
 })
 export class PrimeiroAcessoService {
-  private _Url = 'auth/sign-up';
+  private _Url = 'sgm-auth-api/Auth/sign-up';
   constructor(private service: ParentService) {
    }
   

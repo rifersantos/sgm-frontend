@@ -19,7 +19,6 @@ export class ConsultarProjetosDetalhesComponent implements OnInit {
   }
 
   mostrarProjeto (parametros:any) : any{
-        debugger;
        this.projeto = parametros.projeto;
        // this.imagem = "data:image/png;base64,"+parametros.imagem;
         let pathReportString = 'data:image/png;base64,' + (this.dom.bypassSecurityTrustResourceUrl(parametros.imagem) as any).changingThisBreaksApplicationSecurity; 

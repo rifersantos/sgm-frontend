@@ -7,8 +7,8 @@ const consultarProjetosDetalhesRoutes : Routes = [
     {
         path:'consulta-projetos-detalhes',
         component:ConsultarProjetosDetalhesComponent,
-     //   canActivate: [RoleGuard],
-     //   data: { role: ['CIDADAO', 'MASTER', 'FUNCIONARIO']}
+        canActivate: [RoleGuard],
+        data: { role: ['citizen', 'admin', 'employee']}
     }
 ];
 

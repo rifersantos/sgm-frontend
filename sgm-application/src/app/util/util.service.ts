@@ -81,22 +81,7 @@ export class UtilService {
     }
   }
 
-  isEmailPermitido(email: string) {
-    const listaEmailsPermitidos: string[] = ['sicoobnorte.com.br', 'sicoobcredisul.com.br', 'credip.com.br', 'sicoobcredip.com.br', 'sicoobourocredi.com.br', 'sicoobacre.com.br', 'sicoobcrediforte-ro.com.br', 'credijurd.com.br', 'sicoobvaledojamari.com.br', 'sicoobportocredi.com.br', 'sicoobcentro.com.br', 'sicoobmanaus.com.br', 'sicoob.com.br'];
-    try {
-      let dominio = email.split('@')[1];
-      if (listaEmailsPermitidos.indexOf(dominio) > -1) {
-        return true;
-      } else {
-        return false;
-      }
-
-    } catch (e) {
-      return false;
-    }
-  }
-
-
+  
   getFormattedDate(isoDate: string) {
     return new Date(isoDate);
   }

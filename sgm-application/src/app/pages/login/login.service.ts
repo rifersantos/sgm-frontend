@@ -9,7 +9,7 @@ import { ParentService } from 'app/util/parent.service';
 })
 export class LoginService {
   private retorno: RetornoServiceModel;
-  private _Url = 'auth/sign-in';
+  private _Url = 'sgm-auth-api/Auth/sign-in';
   private _UrlRoles = 'sgm-services/rest/roles';
   private _UrlLoginComRole = 'sgm-services/rest/loginRole';
   constructor(private service: ParentService) {

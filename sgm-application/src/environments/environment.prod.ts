@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  contextRoot: 'http://localhost:5000/'
+  contextRoot: 'http://192.168.1.220:8000/'
 };

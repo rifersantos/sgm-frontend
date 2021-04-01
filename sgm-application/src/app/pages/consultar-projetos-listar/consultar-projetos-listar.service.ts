@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class ConsultarProjetosListarService {
-    private _UrlListar = 'listar/';
-    private _UrlBuscar = 'detalhes/';
+    private _UrlListar = 'sgm-gep-api/Project/list';
+    private _UrlBuscar = 'sgm-gep-api/Project/getGanttProject?projectId=';
     constructor(private service: ParentService) {
     }
   

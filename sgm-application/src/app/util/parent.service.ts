@@ -26,7 +26,16 @@ export class ParentService {
     let token = sessionStorage.getItem('token');
     if (token != null && token != "" && token != undefined) {
       this.headers = this.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
-      .set('Access-Control-Allow-Origin', '*');
+    }
+    
+    
+  }
+
+  private setSimpleHeader() {
+    this.headers = new HttpHeaders();
+    let token = sessionStorage.getItem('token');
+    if (token != null && token != "" && token != undefined) {
+      this.headers = this.headers.set('content-type', 'application/json');
     }
     
     
@@ -70,7 +79,6 @@ export class ParentService {
   }
 
   post(url: string, params: any): Promise<any> {
-    debugger;
     this.showLoader();
     this.setHeaders();
     return new Promise((resolve, reject) => {
@@ -134,6 +142,7 @@ export class ParentService {
 
   postNA(url: string, params: any): Promise<any> {
     this.showLoader();
+    this.setSimpleHeader();
     return new Promise((resolve, reject) => {
       this._http.post(this.getContextRootUrl(url), params)
         .toPromise()

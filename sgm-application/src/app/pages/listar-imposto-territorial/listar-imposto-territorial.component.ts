@@ -26,17 +26,16 @@ export class ListarImpostoTerritorialComponent implements OnInit {
 
   recuperarImposto(parametros:any) : any{
     this.service.listarImpostoTerritorial(parametros)
-
     .then((response : any) => {
-      if(response.succeeded){
-        debugger;
-        let pathReportString = 'data:application/pdf;base64,' + (this.dom.bypassSecurityTrustResourceUrl(response.file) as any).changingThisBreaksApplicationSecurity; 
+      if(response.propertyTax.succeeded){
+        let pathReportString = 'data:application/pdf;base64,' + (this.dom.bypassSecurityTrustResourceUrl(response.propertyTax.content) as any).changingThisBreaksApplicationSecurity; 
         top.document.getElementById('ifrm').setAttribute("src", pathReportString);  
-      }else if(!response.succeeded) {
-            debugger;
-            this.mensagem.erro(response.erro,0);
-            this.router.goto('imposto-territorial');
-          
+      }else if(response.status == 403) {
+            this.mensagem.erro(response.message,0);
+            this.router.goto('forbidden');          
+      }else{
+        this.mensagem.erro(response.message,0);
+        this.router.goto('imposto-territorial');          
       }
     }).catch((erro) => {
           this.mensagem.erro("Falha",3);

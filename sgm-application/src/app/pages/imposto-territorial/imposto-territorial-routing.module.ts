@@ -8,7 +8,7 @@ const impostoTerritorialRoutes : Routes = [
         path:'imposto-territorial',
         component:ImpostoTerritorialComponent,
         canActivate: [RoleGuard],
-        data: { role: ['CIDADAO', 'MASTER', 'FUNCIONARIO']}
+        data: { role: ['citizen', 'admin']}
     }];
 
 @NgModule({

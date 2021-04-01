@@ -11,31 +11,31 @@ import { AuthService } from 'app/services/auth.service';
 export class MenuComponent implements OnInit {
   route: Router;
 
-  ROLE_MASTER: boolean;
-  ROLE_GESTOR: boolean;
-  ROLE_FUNCIONARIO: boolean;
+  admin: boolean;
+  citizen: boolean;
+  employee: boolean;
 
   constructor(private router: Router, private authService : AuthService) {
     this.route = this.router;
   }
 
   ngOnInit() {
-    this.ROLE_MASTER = false;
-    this.ROLE_GESTOR = false;
-    this.ROLE_FUNCIONARIO = false;
+    this.admin = false;
+    this.citizen = false;
+    this.employee = false;
   }
 
     montaMenu():void{
-     this.ROLE_MASTER=false;
-     this.ROLE_GESTOR=false;
-     this.ROLE_FUNCIONARIO=false;
+     this.admin=false;
+     this.citizen=false;
+     this.employee=false;
      let role = this.authService.getUserRole();
-     if(role=="ROLE_MASTER" || role=="ROLE_MASTER_AUXILIAR"){
-       this.ROLE_MASTER=true;
-     }else  if(role=="ROLE_GESTOR" || role=="ROLE_GESTOR_AUXILIAR"){
-       this.ROLE_GESTOR=true;
-     }else  if(role=="ROLE_FUNCIONARIO"){
-       this.ROLE_FUNCIONARIO=true;
+     if(role=="admin"){
+       this.admin=true;
+     }else  if(role=="citizen"){
+       this.citizen=true;
+     }else  if(role=="employee"){
+       this.employee=true;
      }
    }
 }

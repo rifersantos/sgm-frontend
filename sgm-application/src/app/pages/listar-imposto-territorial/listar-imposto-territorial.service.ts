@@ -6,20 +6,17 @@ import { ParentService } from 'app/util/parent.service';
 })
 export class ListarImpostoTerritorialService {
 
-  private _UrlIptu = 'iptu/';
-  private _UrlItr = 'itr/';
+  private _Url = 'sgm-sac-api/CitizenService/getPropertyTax';
 
   constructor(private service: ParentService) {
   }
 
   listarImpostoTerritorial(parametros:any): any {
-    let url;
+    let impostoRural=true;
     if(parametros.tipoImposto == "iptu"){
-      url = this._UrlIptu;
-    }else{
-      url = this._UrlItr;
+      impostoRural = false;
     }
-    return this.service.get(url+parametros.inscricaoImobiliaria)
+    return this.service.post(this._Url,{"propertyRegistration":parametros.inscricaoImobiliaria,"isRuralTax":impostoRural})
       .then(
         retorno => { // Success
           return (retorno);
